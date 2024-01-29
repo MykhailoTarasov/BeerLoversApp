@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/BeerLoversApp/static/css/main.7acaea2f.css",
-    "main.js": "/BeerLoversApp/static/js/main.07d3183d.js",
+    "main.js": "/BeerLoversApp/static/js/main.a52d12ee.js",
     "index.html": "/BeerLoversApp/index.html",
-    "main.7acaea2f.css.map": "/BeerLoversApp/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/BeerLoversApp/static/js/main.07d3183d.js.map"
+    "main.a52d12ee.js.map": "/BeerLoversApp/static/js/main.a52d12ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.a52d12ee.js"
   ]
 }
