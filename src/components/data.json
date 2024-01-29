@@ -22,5 +22,21 @@
         "date": 2022,
         "brewery": "Hopalla",
         "style": "DDH IPA"
+    },
+    {
+        "id": "4",
+        "beer": "Hope",
+        "place": "Belgrad",
+        "date": 2023,
+        "brewery": "Dogma",
+        "style": "DDH IPA"
+    },
+    {
+        "id": "5",
+        "beer": "Cocobanger",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Imperial stout"
     }
 ]
