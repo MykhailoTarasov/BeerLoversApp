@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "beer": "Basi Kefa",
+        "place": "Sofia",
+        "date": 2021,
+        "brewery": "BeerBastards",
+        "style": "IPA"
+    },
+    {
+        "id": "2",
+        "beer": "Noa",
+        "place": "Hamburg",
+        "date": 2024,
+        "brewery": "Omnipollo",
+        "style": "Imperial stout"
+    },
+    {
+        "id": "3",
+        "beer": "Nebula",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Hopalla",
+        "style": "DDH IPA"
+    }
+]
