@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/BeerLoversApp/static/js/main.ea80e935.js",
+    "main.js": "/BeerLoversApp/static/js/main.7cb79574.js",
     "index.html": "/BeerLoversApp/index.html",
-    "main.ea80e935.js.map": "/BeerLoversApp/static/js/main.ea80e935.js.map"
+    "main.7cb79574.js.map": "/BeerLoversApp/static/js/main.7cb79574.js.map"
   },
   "entrypoints": [
-    "static/js/main.ea80e935.js"
+    "static/js/main.7cb79574.js"
   ]
 }
