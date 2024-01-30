@@ -37,6 +37,12 @@ class App extends Component {
     });
   };
 
+  deleteBeerItem = beerId => {
+    this.setState(prevState => ({
+      beerItems: prevState.beerItems.filter(beer => beer.id !== beerId),
+    }));
+  };
+
   render() {
     const { filters } = this.state;
 
@@ -46,7 +52,10 @@ class App extends Component {
         <BeerForm />
         <h3>Searchbar</h3>
         <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
-        <BeerList items={this.filterBeerItems()} />
+        <BeerList
+          items={this.filterBeerItems()}
+          onDeleteBeerItem={this.deleteBeerItem}
+        />
       </div>
     );
   }
