@@ -1,6 +1,7 @@
 import { Formik, Field, Form } from 'formik';
 
-const BeerForm = () => {
+
+const BeerForm = ({onAdd}) => {
   return (
     <Formik
       initialValues={{
@@ -10,7 +11,11 @@ const BeerForm = () => {
         brewery: '',
         style: '',
       }}
-      onSubmit={values => {}}
+     
+      onSubmit={(values, actions) => {
+        onAdd(values);
+        actions.resetForm();
+      }}
     >
       <Form>
         <label>

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import BeerList from './BeerList/BeerList';
 import initialBeerItems from './data.json';
 import SearchBar from './SearchBar/SearchBar';
@@ -43,13 +44,26 @@ class App extends Component {
     }));
   };
 
+  addBeer = newBeer => {
+    const beerExists = this.state.beerItems.some(
+      item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
+    );
+    if (beerExists) {
+      alert(`${newBeer.beer}' is arleady in the list.`);
+    } else {
+      this.setState(prevState => ({
+        beerItems: [...prevState.beerItems, { ...newBeer, id: nanoid() }],
+      }));
+    }
+  };
+
   render() {
     const { filters } = this.state;
 
     return (
       <div>
         <h1>BeerLoversApp</h1>
-        <BeerForm />
+        <BeerForm onAdd={this.addBeer}/>
         <h3>Searchbar</h3>
         <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
         <BeerList
