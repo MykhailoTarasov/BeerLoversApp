@@ -1,5 +1,5 @@
 const SearchBar = ({
-  filters: { place, date, brewery, style },
+  filters: { place, brewery, style },
   onChangeFilter
 }) => {
   return (
@@ -9,12 +9,6 @@ const SearchBar = ({
         value={place}
         onChange={evt => onChangeFilter('place', evt.target.value)}
         placeholder="Filter by place..."
-      />
-      <input
-        type="text"
-        value={date}
-        onChange={evt => onChangeFilter('date', evt.target.value)}
-        placeholder="Filter by date..."
       />
       <input
         type="text"

@@ -9,11 +9,9 @@ class App extends Component {
     beerItems: initialBeerItems,
     filters: {
       place: '',
-      date: '',
       brewery: '',
-      style: ''
-    }
-    
+      style: '',
+    },
   };
 
   changeFilter = (key, value) => {
@@ -25,19 +23,30 @@ class App extends Component {
     }));
   };
 
+  filterBeerItems = () => {
+    const { beerItems, filters } = this.state;
+    return beerItems.filter(beer => {
+      return (
+        (!filters.place ||
+          beer.place.toLowerCase().includes(filters.place.toLowerCase())) &&
+        (!filters.brewery ||
+          beer.brewery.toLowerCase().includes(filters.brewery.toLowerCase())) &&
+        (!filters.style ||
+          beer.style.toLowerCase().includes(filters.style.toLowerCase()))
+      );
+    });
+  };
+
   render() {
-    const { beerItems, filters } =
-      this.state;
+    const { filters } = this.state;
 
     return (
       <div>
         <h1>BeerLoversApp</h1>
         <BeerForm />
-        <SearchBar
-          filters={filters}
-          onChangeFilter={this.changeFilter}
-        />
-        <BeerList items={beerItems} />
+        <h3>Searchbar</h3>
+        <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
+        <BeerList items={this.filterBeerItems()} />
       </div>
     );
   }

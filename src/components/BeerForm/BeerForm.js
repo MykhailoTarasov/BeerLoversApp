@@ -1,5 +1,7 @@
 const BeerForm = () => {
-    return <div>BeerForm</div>
+    return <div>
+        <h3>BeerForm</h3>
+    </div>
 }
 
 export default BeerForm;
