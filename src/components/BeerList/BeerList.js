@@ -1,14 +1,15 @@
 import BeerCard from "components/BeerCard/BeerCard";
+import { List, ListItem } from "./BeerList.Styled";
 
 const BeerList = ({ items, onDeleteBeerItem }) => {
   return (
-    <ul>
+    <List>
       {items.map(item => (
-        <li key={item.id}>
+        <ListItem key={item.id}>
             <BeerCard beerItem={item} onDeleteBeerItem={onDeleteBeerItem}/>
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 

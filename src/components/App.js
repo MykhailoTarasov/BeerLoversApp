@@ -4,6 +4,7 @@ import BeerList from './BeerList/BeerList';
 import initialBeerItems from './data.json';
 import SearchBar from './SearchBar/SearchBar';
 import BeerForm from './BeerForm/BeerForm';
+import { Container, MainContainer, SearchContainer } from './Layout';
 
 class App extends Component {
   state = {
@@ -61,16 +62,22 @@ class App extends Component {
     const { filters } = this.state;
 
     return (
-      <div>
-        <h1>BeerLoversApp</h1>
-        <BeerForm onAdd={this.addBeer}/>
-        <h3>Searchbar</h3>
-        <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
-        <BeerList
-          items={this.filterBeerItems()}
-          onDeleteBeerItem={this.deleteBeerItem}
-        />
-      </div>
+      <Container>
+        <SearchContainer>
+          <h3>Searchbar</h3>
+          <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
+        </SearchContainer>
+
+        <MainContainer>
+          <h1>BeerLoversApp</h1>
+          <BeerForm onAdd={this.addBeer} />
+
+          <BeerList
+            items={this.filterBeerItems()}
+            onDeleteBeerItem={this.deleteBeerItem}
+          />
+        </MainContainer>
+      </Container>
     );
   }
 }

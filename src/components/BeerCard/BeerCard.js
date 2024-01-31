@@ -1,5 +1,7 @@
+import { CardBox } from "./BeerCard.Styled";
+
 const BeerCard = ({ beerItem: {id, beer, place, date, brewery, style}, onDeleteBeerItem }) => {
-    return <div>
+    return <CardBox>
         <h2>{beer}</h2>
         <button onClick={() => onDeleteBeerItem(id)}>Delete</button>
         <div>
@@ -9,7 +11,7 @@ const BeerCard = ({ beerItem: {id, beer, place, date, brewery, style}, onDeleteB
         <p>Style: {style}</p>
         </div>
         
-    </div>
+    </CardBox>
 }
 
 export default BeerCard;
