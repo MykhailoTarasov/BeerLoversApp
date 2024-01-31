@@ -5,6 +5,8 @@ display: flex;
 flex-wrap: wrap;
 gap: 10px;
 
+width: 100%;
+
 margin: 0;
 padding: 0;
 list-style: none;
