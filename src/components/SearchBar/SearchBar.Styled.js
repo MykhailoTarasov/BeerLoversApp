@@ -6,7 +6,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 5px;
+gap: 15px;
 `
 
 export const StyledField = styled.input`

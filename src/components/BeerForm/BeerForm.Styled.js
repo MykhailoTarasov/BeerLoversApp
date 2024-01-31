@@ -4,7 +4,7 @@ import { Field, Form, ErrorMessage } from 'formik';
 export const StyledForm = styled(Form)`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 `;
 
 export const ErrMessageStyled = styled(ErrorMessage)`

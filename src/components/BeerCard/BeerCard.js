@@ -5,7 +5,7 @@ const BeerCard = ({
   onDeleteBeerItem,
 }) => {
   return (
-    <CardBox>
+    <CardBox beerstyle={style}>
       <CardTitle>{beer}</CardTitle>
       <DeleteButton onClick={() => onDeleteBeerItem(id)}>Delete</DeleteButton>
       <div>
