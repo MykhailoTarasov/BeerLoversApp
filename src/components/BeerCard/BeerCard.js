@@ -1,17 +1,21 @@
-import { CardBox } from "./BeerCard.Styled";
+import { CardBox, CardText, CardTitle, DeleteButton } from './BeerCard.Styled';
 
-const BeerCard = ({ beerItem: {id, beer, place, date, brewery, style}, onDeleteBeerItem }) => {
-    return <CardBox>
-        <h2>{beer}</h2>
-        <button onClick={() => onDeleteBeerItem(id)}>Delete</button>
-        <div>
-        <p>Place: {place}</p>
-        <p>Date: {date}</p>
-        <p>Brewery: {brewery}</p>
-        <p>Style: {style}</p>
-        </div>
-        
+const BeerCard = ({
+  beerItem: { id, beer, place, date, brewery, style },
+  onDeleteBeerItem,
+}) => {
+  return (
+    <CardBox>
+      <CardTitle>{beer}</CardTitle>
+      <DeleteButton onClick={() => onDeleteBeerItem(id)}>Delete</DeleteButton>
+      <div>
+        <CardText>Place: {place}</CardText>
+        <CardText>Date: {date}</CardText>
+        <CardText>Brewery: {brewery}</CardText>
+        <CardText>Style: {style}</CardText>
+      </div>
     </CardBox>
-}
+  );
+};
 
 export default BeerCard;

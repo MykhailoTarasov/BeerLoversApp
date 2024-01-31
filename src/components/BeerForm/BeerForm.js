@@ -1,5 +1,6 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { Button, ErrMessageStyled, StyledField, StyledForm } from './BeerForm.Styled';
 
 const validation = Yup.object().shape({
     beer: Yup.string()
@@ -45,34 +46,34 @@ const BeerForm = ({onAdd}) => {
         actions.resetForm();
       }}
     >
-      <Form>
+      <StyledForm>
         <label>
-          <Field id="beer" name="beer" placeholder="Beer" />
-          <ErrorMessage name="beer"/>
+          <StyledField id="beer" name="beer" placeholder="Beer" />
+          <ErrMessageStyled name="beer"/>
         </label>
 
         <label>
-          <Field id="place" name="place" placeholder="Place" />
-          <ErrorMessage name="place"/>
+          <StyledField id="place" name="place" placeholder="Place" />
+          <ErrMessageStyled name="place"/>
         </label>
 
         <label>
-          <Field id="date" name="date" placeholder="Date" />
-          <ErrorMessage name="date"/>
+          <StyledField id="date" name="date" placeholder="Date" />
+          <ErrMessageStyled name="date"/>
         </label>
 
         <label>
-          <Field id="brewery" name="brewery" placeholder="Brewery" />
-          <ErrorMessage name="brewery"/>
+          <StyledField id="brewery" name="brewery" placeholder="Brewery" />
+          <ErrMessageStyled name="brewery"/>
         </label>
 
         <label>
-          <Field id="style" name="style" placeholder="Style" />
-          <ErrorMessage name="style"/>
+          <StyledField id="style" name="style" placeholder="Style" />
+          <ErrMessageStyled name="style"/>
         </label>
 
-        <button type="submit">Add beer</button>
-      </Form>
+        <Button type="submit">Add beer</Button>
+      </StyledForm>
     </Formik>
   );
 };

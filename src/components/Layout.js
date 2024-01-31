@@ -12,16 +12,20 @@ export const Container = styled.div`
 export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 200px;
+  align-items: center;
+  flex-basis: 250px;
+  padding-left: 20px;
 `;
 
 export const MainContainer = styled.div`
   display: flex;
   flex-grow: 1;
   width: 100%;
+  margin-top: 20px;
 `;
 
 export const ListContainer = styled.div`
   display: flex;
   width: 100%;
+  padding: 20px;
 `;

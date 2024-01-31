@@ -1,4 +1,4 @@
-import { Container } from "./SearchBar.Styled";
+import { Container, StyledField } from "./SearchBar.Styled";
 
 const SearchBar = ({
   filters: { place, brewery, style },
@@ -6,19 +6,19 @@ const SearchBar = ({
 }) => {
   return (
     <Container>
-      <input
+      <StyledField
         type="text"
         value={place}
         onChange={evt => onChangeFilter('place', evt.target.value)}
         placeholder="Filter by place..."
       />
-      <input
+      <StyledField
         type="text"
         value={brewery}
         onChange={evt => onChangeFilter('brewery', evt.target.value)}
         placeholder="Filter by brewery..."
       />
-      <input
+      <StyledField
         type="text"
         value={style}
         onChange={evt => onChangeFilter('style', evt.target.value)}
