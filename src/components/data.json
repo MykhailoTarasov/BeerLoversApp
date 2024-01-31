@@ -21,7 +21,7 @@
         "place": "Sofia",
         "date": 2022,
         "brewery": "Hopalla",
-        "style": "DDH IPA"
+        "style": "Amber ale"
     },
     {
         "id": "4",
@@ -29,7 +29,7 @@
         "place": "Belgrad",
         "date": 2023,
         "brewery": "Dogma",
-        "style": "DDH IPA"
+        "style": "Red ale"
     },
     {
         "id": "5",
@@ -37,6 +37,45 @@
         "place": "Sofia",
         "date": 2022,
         "brewery": "Pohjala",
-        "style": "Imperial stout"
+        "style": "Lambic"
+    },
+    {
+        "id": "6",
+        "beer": "Must Kuld",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Porter"
+    },
+    {
+        "id": "7",
+        "beer": "Porterrrrrr",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Blonde ale"
+    },
+    {
+        "id": "8",
+        "beer": "156ppp",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Brown ale"
+    },{
+        "id": "9",
+        "beer": "NENENEEN",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Gose"
+    },{
+        "id": "10",
+        "beer": "pppeejejej",
+        "place": "Sofia",
+        "date": 2022,
+        "brewery": "Pohjala",
+        "style": "Lager"
     }
+    
 ]
