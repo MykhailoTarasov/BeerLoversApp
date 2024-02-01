@@ -188,7 +188,7 @@ export const CardBox = styled.div`
   position: relative;
   border: 1px solid #b4783a;
   border-radius: 5px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   color: ${getColor};
@@ -212,6 +212,7 @@ export const DeleteButton = styled.button`
 
 export const CardTitle = styled.h2`
   margin: 0;
+  margin-bottom: 5px;
 `;
 
 export const CardText = styled.p`
