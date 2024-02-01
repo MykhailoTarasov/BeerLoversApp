@@ -42,7 +42,7 @@ const getBackgrounColor = props => {
       return '#29251e';
     case 'English porter':
       return '#29251e';
-    case 'American Porter':
+    case 'American porter':
       return '#29251e';
     case 'Barley wine':
       return '#000000';

@@ -20,22 +20,23 @@ class App extends Component {
     this.setState(prevState => ({
       filters: {
         ...prevState.filters,
-        [key]: value,
+        [key]: value === "All" ? "" : value,
       },
     }));
   };
 
   filterBeerItems = () => {
     const { beerItems, filters } = this.state;
+  
     return beerItems.filter(beer => {
-      return (
-        (!filters.place ||
-          beer.place.toLowerCase().includes(filters.place.toLowerCase())) &&
-        (!filters.brewery ||
-          beer.brewery.toLowerCase().includes(filters.brewery.toLowerCase())) &&
-        (!filters.style ||
-          beer.style.toLowerCase().includes(filters.style.toLowerCase()))
-      );
+      const placeMatches = !filters.place ||
+        beer.place.toLowerCase().includes(filters.place.toLowerCase());
+      const breweryMatches = !filters.brewery ||
+        beer.brewery.toLowerCase().includes(filters.brewery.toLowerCase());
+      const styleMatches = !filters.style ||
+        beer.style.toLowerCase() === filters.style.toLowerCase();
+  
+      return placeMatches && breweryMatches && styleMatches;
     });
   };
 
@@ -46,11 +47,14 @@ class App extends Component {
   };
 
   addBeer = newBeer => {
-    const beerExists = this.state.beerItems.some(
+    const { beerItems } = this.state;
+  
+    const beerExists = beerItems.some(
       item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
     );
+  
     if (beerExists) {
-      alert(`${newBeer.beer}' is arleady in the list.`);
+      alert(`${newBeer.beer} is already in the list.`);
     } else {
       this.setState(prevState => ({
         beerItems: [...prevState.beerItems, { ...newBeer, id: nanoid() }],
