@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Field, Form } from 'formik';
+import { Field, Form, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -7,6 +7,19 @@ export const StyledForm = styled(Form)`
   justify-content: center;
   align-items: center;
   gap: 15px;
+`;
+
+export const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledMessage = styled(ErrorMessage)`
+  color: #cc0000;
+  font-size: 20px;
+  margin-top: 10px;
 `;
 
 export const StyledField = styled(Field)`
@@ -17,9 +30,9 @@ export const StyledField = styled(Field)`
   border-radius: 4px;
   margin: 0;
   padding-left: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 `;
-
 
 export const Button = styled.button`
   width: 120px;
@@ -30,5 +43,6 @@ export const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 `;

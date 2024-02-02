@@ -1,9 +1,11 @@
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import {
   Button,
   StyledField,
-  StyledForm
+  StyledForm,
+  StyledLabel,
+  StyledMessage
 } from './BeerForm.Styled';
 
 const validation = Yup.object().shape({
@@ -28,7 +30,7 @@ const validation = Yup.object().shape({
     .required('This is a required field!'),
 
   style: Yup.string()
-    .required('This field is required!'),
+    .required('This is a required field!'),
 });
 
 const BeerForm = ({ onAdd }) => {
@@ -48,28 +50,28 @@ const BeerForm = ({ onAdd }) => {
       }}
     >
       <StyledForm>
-        <label>
+        <StyledLabel>
           <StyledField id="beer" name="beer" placeholder="Beer" />
-          <ErrorMessage name="beer" />
-        </label>
+          <StyledMessage name="beer" component="div"/>
+        </StyledLabel>
 
-        <label>
+        <StyledLabel>
           <StyledField id="place" name="place" placeholder="Place" />
-          <ErrorMessage name="place" />
-        </label>
+          <StyledMessage name="place" component="span"/>
+        </StyledLabel>
 
-        <label>
+        <StyledLabel>
           <StyledField id="date" name="date" placeholder="Date" />
-          <ErrorMessage name="date" />
-        </label>
+          <StyledMessage name="date" component="span"/>
+        </StyledLabel>
 
-        <label>
+        <StyledLabel>
           <StyledField id="brewery" name="brewery" placeholder="Brewery" />
-          <ErrorMessage name="brewery" />
-        </label>
+          <StyledMessage name="brewery" component="span"/>
+        </StyledLabel>
 
-        <label>
-          <Field as="select" id="style" name="style">
+        <StyledLabel>
+          <Field as="select" id="style" name="span">
             <option value="All">All</option>
             <option value="Imperial stout">Imperial stout</option>
             <option value="Milk stout">Milk stout</option>
@@ -134,8 +136,8 @@ const BeerForm = ({ onAdd }) => {
             <option value="Lager">Lager</option>
             <option value="American lager">American lager</option>
           </Field>
-          <ErrorMessage name="style" />
-        </label>
+          <StyledMessage name="style" component="span"/>
+        </StyledLabel>
 
         <Button type="submit">Add beer</Button>
       </StyledForm>
