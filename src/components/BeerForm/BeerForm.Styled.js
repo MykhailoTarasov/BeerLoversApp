@@ -3,7 +3,13 @@ import { Field, Form, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
-  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+  }
+  flex-wrap: wrap;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
   justify-content: center;
   align-items: center;
   gap: 15px;

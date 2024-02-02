@@ -11,10 +11,12 @@ export const Container = styled.div`
 
 export const MainContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  @media (max-width: 1439px) {
+    flex-direction: column;
+  }
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  
+  
   width: 100%;
   margin-top: 20px;
 `;
@@ -23,8 +25,10 @@ export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-basis: 250px;
-  // padding-left: 20px;
+  @media (min-width: 1439px) {
+    flex-basis: 250px;
+    padding-left: 20px;
+  }
 `;
 
 export const ListContainer = styled.div`

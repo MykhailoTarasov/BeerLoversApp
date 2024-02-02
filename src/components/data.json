@@ -18,7 +18,7 @@
     {
         "id": "3",
         "beer": "Nebula",
-        "place": "Sofia",
+        "place": "Kyiv",
         "date": 2022,
         "brewery": "Hopalla",
         "style": "Amber ale"
@@ -34,7 +34,7 @@
     {
         "id": "5",
         "beer": "Cocobanger",
-        "place": "Sofia",
+        "place": "Vienna",
         "date": 2022,
         "brewery": "Pohjala",
         "style": "Lambic"
@@ -42,7 +42,7 @@
     {
         "id": "6",
         "beer": "Must Kuld",
-        "place": "Sofia",
+        "place": "London",
         "date": 2022,
         "brewery": "Pohjala",
         "style": "Porter"
@@ -50,7 +50,7 @@
     {
         "id": "7",
         "beer": "Porterrrrrr",
-        "place": "Sofia",
+        "place": "Milan",
         "date": 2022,
         "brewery": "Pohjala",
         "style": "Blonde ale"
@@ -65,14 +65,14 @@
     },{
         "id": "9",
         "beer": "NENENEEN",
-        "place": "Sofia",
+        "place": "Athens",
         "date": 2022,
         "brewery": "Pohjala",
         "style": "Gose"
     },{
         "id": "10",
         "beer": "pppeejejej",
-        "place": "Sofia",
+        "place": "Brugge",
         "date": 2022,
         "brewery": "Pohjala",
         "style": "Lager"

@@ -17,7 +17,7 @@ export const ListItem = styled.li`
 @media (max-width: 375px) {
   width: 100%;
 }
-width: 300px;
+width: 320px;
 
 // flex-basis: calc((100% - 2 * 24px) / 3);
 
