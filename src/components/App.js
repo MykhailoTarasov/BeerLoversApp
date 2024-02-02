@@ -16,6 +16,14 @@ class App extends Component {
     },
   };
 
+  componentDidMount() {
+
+  }
+
+  componentDidUpdate() {
+
+  }
+
   changeFilter = (key, value) => {
     this.setState(prevState => ({
       filters: {
@@ -61,6 +69,7 @@ class App extends Component {
       }));
     }
   };
+
 
   render() {
     const { filters } = this.state;

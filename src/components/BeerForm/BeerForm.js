@@ -1,8 +1,7 @@
-import { Formik, Field } from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
   Button,
-  ErrMessageStyled,
   StyledField,
   StyledForm
 } from './BeerForm.Styled';
@@ -51,26 +50,26 @@ const BeerForm = ({ onAdd }) => {
       <StyledForm>
         <label>
           <StyledField id="beer" name="beer" placeholder="Beer" />
-          <ErrMessageStyled name="beer" />
+          <ErrorMessage name="beer" />
         </label>
 
         <label>
           <StyledField id="place" name="place" placeholder="Place" />
-          <ErrMessageStyled name="place" />
+          <ErrorMessage name="place" />
         </label>
 
         <label>
           <StyledField id="date" name="date" placeholder="Date" />
-          <ErrMessageStyled name="date" />
+          <ErrorMessage name="date" />
         </label>
 
         <label>
           <StyledField id="brewery" name="brewery" placeholder="Brewery" />
-          <ErrMessageStyled name="brewery" />
+          <ErrorMessage name="brewery" />
         </label>
 
         <label>
-          <Field as="select" name="style">
+          <Field as="select" id="style" name="style">
             <option value="All">All</option>
             <option value="Imperial stout">Imperial stout</option>
             <option value="Milk stout">Milk stout</option>
@@ -135,7 +134,7 @@ const BeerForm = ({ onAdd }) => {
             <option value="Lager">Lager</option>
             <option value="American lager">American lager</option>
           </Field>
-          <ErrMessageStyled name="style" />
+          <ErrorMessage name="style" />
         </label>
 
         <Button type="submit">Add beer</Button>
