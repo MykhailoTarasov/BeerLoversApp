@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FaTrashCan } from 'react-icons/fa6';
 
 const getBackgrounColor = props => {
   switch (props.beerstyle) {
@@ -200,14 +201,20 @@ export const DeleteButton = styled.button`
   top: 20px;
   right: 20px;
 
-  width: 70px;
+  width: 30px;
+  height: 30px;
   align-self: center;
-  padding: 5px;
+  padding: 10px;
   color: white;
   background-color: #b4783a;
   border-radius: 5px;
   cursor: pointer;
   border: none;
+`;
+
+export const DeleteIcon = styled(FaTrashCan)`
+  position: absolute;
+  transform: translate(-50%, -50%);
 `;
 
 export const CardTitle = styled.h2`

@@ -1,4 +1,4 @@
-import { CardBox, CardText, CardTitle, DeleteButton } from './BeerCard.Styled';
+import { CardBox, CardText, CardTitle, DeleteButton, DeleteIcon } from './BeerCard.Styled';
 
 const BeerCard = ({
   beerItem: { id, beer, place, date, brewery, style },
@@ -7,7 +7,7 @@ const BeerCard = ({
   return (
     <CardBox beerstyle={style}>
       <CardTitle>{beer}</CardTitle>
-      <DeleteButton onClick={() => onDeleteBeerItem(id)}>Delete</DeleteButton>
+      <DeleteButton onClick={() => onDeleteBeerItem(id)}><DeleteIcon/></DeleteButton>
       <div>
         <CardText>Place: {place}</CardText>
         <CardText>Date: {date}</CardText>

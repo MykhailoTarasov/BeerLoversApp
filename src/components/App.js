@@ -1,14 +1,18 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import BeerList from './BeerList/BeerList';
-import initialBeerItems from './data.json';
 import SearchBar from './SearchBar/SearchBar';
 import BeerForm from './BeerForm/BeerForm';
-import { Container, ListContainer, MainContainer, SearchContainer } from './Layout';
+import {
+  Container,
+  ListContainer,
+  MainContainer,
+  SearchContainer,
+} from './Layout';
 
 class App extends Component {
   state = {
-    beerItems: initialBeerItems,
+    beerItems: [],
     filters: {
       place: '',
       brewery: '',
@@ -17,34 +21,59 @@ class App extends Component {
   };
 
   componentDidMount() {
-
+    const savedBeer = localStorage.getItem('changed-beerItems');
+    if (savedBeer !== null) {
+      this.setState({
+        beerItems: JSON.parse(savedBeer),
+      });
+    }
   }
 
-  componentDidUpdate() {
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.beerItems !== this.state.beerItems) {
+      localStorage.setItem(
+        'changed-beerItems',
+        JSON.stringify(this.state.beerItems)
+      );
+    }
   }
 
   changeFilter = (key, value) => {
     this.setState(prevState => ({
       filters: {
         ...prevState.filters,
-        [key]: value === "All" ? "" : value,
+        [key]: value === 'All' ? '' : value,
       },
     }));
   };
 
   filterBeerItems = () => {
     const { beerItems, filters } = this.state;
-  
+
     return beerItems.filter(beer => {
-      const placeMatches = !filters.place ||
+      const placeMatches =
+        !filters.place ||
         beer.place.toLowerCase().includes(filters.place.toLowerCase());
-      const breweryMatches = !filters.brewery ||
+      const breweryMatches =
+        !filters.brewery ||
         beer.brewery.toLowerCase().includes(filters.brewery.toLowerCase());
-      const styleMatches = !filters.style ||
+      const styleMatches =
+        !filters.style ||
         beer.style.toLowerCase() === filters.style.toLowerCase();
-  
+
       return placeMatches && breweryMatches && styleMatches;
+    });
+  };
+
+  
+
+  recetFilters = () => {
+    this.setState({
+      filters: {
+        place: '',
+        brewery: '',
+        style: '',
+      },
     });
   };
 
@@ -56,11 +85,11 @@ class App extends Component {
 
   addBeer = newBeer => {
     const { beerItems } = this.state;
-  
+
     const beerExists = beerItems.some(
       item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
     );
-  
+
     if (beerExists) {
       alert(`${newBeer.beer} is already in the list.`);
     } else {
@@ -69,6 +98,7 @@ class App extends Component {
       }));
     }
   };
+
 
 
   render() {
@@ -82,7 +112,11 @@ class App extends Component {
         <MainContainer>
           <SearchContainer>
             <h3>Searchbar</h3>
-            <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
+            <SearchBar
+              filters={filters}
+              onChangeFilter={this.changeFilter}
+              onRecet={this.recetFilters}
+            />
           </SearchContainer>
 
           <ListContainer>

@@ -1,6 +1,6 @@
 import { Container, StyledField, StyledSelect } from './SearchBar.Styled';
 
-const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter }) => {
+const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet }) => {
   return (
     <Container>
       <StyledField
@@ -85,6 +85,7 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter }) => {
         <option value="Lager">Lager</option>
         <option value="American lager">American lager</option>
       </StyledSelect>
+      <button type="button" onClick={onRecet}>Recet filters</button>
     </Container>
   );
 };
