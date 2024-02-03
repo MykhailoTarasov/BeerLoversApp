@@ -71,7 +71,7 @@ const BeerForm = ({ onAdd }) => {
         </StyledLabel>
 
         <StyledLabel>
-          <Field as="select" id="style" name="span">
+          <Field as="select" id="style" name="style">
             <option value="All">All</option>
             <option value="Imperial stout">Imperial stout</option>
             <option value="Milk stout">Milk stout</option>

@@ -21,7 +21,7 @@ width: 320px;
 
 // flex-basis: calc((100% - 2 * 24px) / 3);
 
-// &:hover {
-//     transform: scale(1.03);
-//   }
+&:hover {
+    transform: scale(1.03);
+  }
 `;
