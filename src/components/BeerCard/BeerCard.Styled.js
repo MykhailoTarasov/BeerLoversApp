@@ -93,6 +93,8 @@ const getBackgrounColor = props => {
       return '#fcd970';
     case 'British golden ale':
       return '#fcd970';
+      case 'Golden ale':
+      return '#fcd970';
     case 'Gose':
       return '#fcd970';
     case 'Helles bock':
@@ -198,7 +200,7 @@ export const CardBox = styled.div`
 
 export const DeleteButton = styled.button`
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
 
   width: 30px;

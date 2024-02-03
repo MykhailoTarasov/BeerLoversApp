@@ -118,6 +118,7 @@ const BeerForm = ({ onAdd }) => {
             <option value="Bitter">Bitter</option>
             <option value="Eisbock">Eisbock</option>
             <option value="British golden ale">British golden ale</option>
+            <option value="Golden ale">Golden ale</option>
             <option value="Gose">Gose</option>
             <option value="Helles bock">Helles bock</option>
             <option value="American pale ale">American pale ale</option>

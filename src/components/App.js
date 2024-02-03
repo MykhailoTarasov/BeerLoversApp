@@ -65,8 +65,6 @@ class App extends Component {
     });
   };
 
-  
-
   recetFilters = () => {
     this.setState({
       filters: {
@@ -98,8 +96,6 @@ class App extends Component {
       }));
     }
   };
-
-
 
   render() {
     const { filters } = this.state;

@@ -28,7 +28,9 @@ export const SearchContainer = styled.div`
   @media (min-width: 1439px) {
     flex-basis: 250px;
     padding-left: 20px;
+    width: 450px;
   }
+  
 `;
 
 export const ListContainer = styled.div`

@@ -4,7 +4,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 
   width: 100%;
 
@@ -17,7 +17,7 @@ export const ListItem = styled.li`
 @media (max-width: 375px) {
   width: 100%;
 }
-width: 320px;
+width: 350px;
 
 // flex-basis: calc((100% - 2 * 24px) / 3);
 
