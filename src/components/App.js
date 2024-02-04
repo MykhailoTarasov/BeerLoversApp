@@ -20,6 +20,7 @@ class App extends Component {
       place: '',
       brewery: '',
       style: '',
+      date: '',
     },
   };
 
@@ -57,6 +58,9 @@ class App extends Component {
       const placeMatches =
         !filters.place ||
         beer.place.toLowerCase().includes(filters.place.toLowerCase());
+        const dateMatches =
+        !filters.date ||
+        beer.date.toLowerCase().includes(filters.date.toLowerCase());
       const breweryMatches =
         !filters.brewery ||
         beer.brewery.toLowerCase().includes(filters.brewery.toLowerCase());
@@ -64,7 +68,7 @@ class App extends Component {
         !filters.style ||
         beer.style.toLowerCase() === filters.style.toLowerCase();
 
-      return placeMatches && breweryMatches && styleMatches;
+      return placeMatches && breweryMatches && styleMatches && dateMatches;
     });
   };
 
@@ -74,6 +78,7 @@ class App extends Component {
         place: '',
         brewery: '',
         style: '',
+        date: '',
       },
     });
   };
