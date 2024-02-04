@@ -15,6 +15,8 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         onChange={evt => onChangeFilter('brewery', evt.target.value)}
         placeholder="Filter by brewery..."
       />
+
+      {/* It would be nice to have separate component for this selector. It can be reused here and in BeerForm component. */}
       <StyledSelect
         value={style}
         onChange={evt => {
