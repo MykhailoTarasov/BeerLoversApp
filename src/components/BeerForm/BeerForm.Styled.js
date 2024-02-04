@@ -20,12 +20,15 @@ export const StyledLabel = styled.label`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const StyledMessage = styled(ErrorMessage)`
   color: #cc0000;
   font-size: 20px;
   margin-top: 10px;
+  position: absolute;
+  top: 30px;
 `;
 
 export const StyledField = styled(Field)`
@@ -40,10 +43,15 @@ export const StyledField = styled(Field)`
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 `;
 
+export const StyledSelectField = styled(StyledField)`
+  padding: 8px;
+`;
+
 export const Button = styled.button`
   width: 120px;
   align-self: center;
   padding: 10px;
+  margin-top: 20px;
   color: white;
   background-color: #b4783a;
   border-radius: 5px;

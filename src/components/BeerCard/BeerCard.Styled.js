@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
 
 const getBackgrounColor = props => {
-  switch (props.beerstyle) {
+  switch (props.$beerstyle) {
     case 'Imperial stout':
       return '#000000';
     case 'Milk stout':
@@ -143,7 +143,7 @@ const getBackgrounColor = props => {
 };
 
 const getColor = props => {
-  switch (props.beerstyle) {
+  switch (props.$beerstyle) {
     case 'Imperial stout':
       return '#ffe189';
     case 'Milk stout':
