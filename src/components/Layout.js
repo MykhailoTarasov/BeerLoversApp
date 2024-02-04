@@ -25,12 +25,10 @@ export const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     flex-basis: 250px;
-    padding-left: 20px;
-    width: 450px;
+    padding-left: 30px;
   }
-  
 `;
 
 export const ListContainer = styled.div`

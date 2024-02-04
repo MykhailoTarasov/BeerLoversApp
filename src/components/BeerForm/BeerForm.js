@@ -83,6 +83,9 @@ const BeerForm = ({ onAdd }) => {
             <option value="IPA">IPA</option>
             <option value="DIPA">DIPA</option>
             <option value="TIPA">TIPA</option>
+            <option value="Hazy IPA">Hazy IPA</option>
+            <option value="Hazy DIPA">Hazy DIPA</option>
+            <option value="Hazy TIPA">Hazy TIPA</option>
             <option value="NE IPA">NE IPA</option>
             <option value="NE DIPA">NE DIPA</option>
             <option value="NE TIPA">NE TIPA</option>
@@ -91,6 +94,7 @@ const BeerForm = ({ onAdd }) => {
             <option value="DDH TIPA">DDH TIPA</option>
             <option value="Milkshake IPA">Milkshake IPA</option>
             <option value="Porter">Porter</option>
+            <option value="Imperial porter">Imperial porter</option>
             <option value="Baltic porter">Baltic porter</option>
             <option value="English porter">English porter</option>
             <option value="American porter">American porter</option>

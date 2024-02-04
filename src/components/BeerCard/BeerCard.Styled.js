@@ -23,6 +23,12 @@ const getBackgrounColor = props => {
       return '#f4f17f';
     case 'TIPA':
       return '#f4f17f';
+    case 'Hazy IPA':
+      return '#f4f17f';
+    case 'Hazy DIPA':
+      return '#f4f17f';
+    case 'Hazy TIPA':
+      return '#f4f17f';
     case 'NE IPA':
       return '#f4f17f';
     case 'NE DIPA':
@@ -38,6 +44,8 @@ const getBackgrounColor = props => {
     case 'Milkshake IPA':
       return '#f4f17f';
     case 'Porter':
+      return '#29251e';
+      case 'Imperial porter':
       return '#29251e';
     case 'Baltic porter':
       return '#29251e';
@@ -93,7 +101,7 @@ const getBackgrounColor = props => {
       return '#fcd970';
     case 'British golden ale':
       return '#fcd970';
-      case 'Golden ale':
+    case 'Golden ale':
       return '#fcd970';
     case 'Gose':
       return '#fcd970';
@@ -145,6 +153,8 @@ const getColor = props => {
     case 'Irish stout':
       return '#ffe189';
     case 'Porter':
+      return '#ffe189';
+      case 'Imperial porter':
       return '#ffe189';
     case 'Baltic porter':
       return '#ffe189';
@@ -219,7 +229,7 @@ export const DeleteIcon = styled(FaTrashCan)`
   transform: translate(-50%, -50%);
 `;
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled.h3`
   margin: 0;
   margin-bottom: 5px;
 `;
