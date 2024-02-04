@@ -1,6 +1,6 @@
-import { Container, StyledField, StyledSelect } from './SearchBar.Styled';
+import { Button, Container, StyledField, StyledSelect } from './SearchBar.Styled';
 
-const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet }) => {
+const SearchBar = ({ filters: { place, brewery, style, date }, onChangeFilter, onRecet }) => {
   return (
     <Container>
       <StyledField
@@ -8,6 +8,12 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         value={place}
         onChange={evt => onChangeFilter('place', evt.target.value)}
         placeholder="Filter by place..."
+      />
+      <StyledField
+        type="text"
+        value={date}
+        onChange={evt => onChangeFilter('date', evt.target.value)}
+        placeholder="Filter by date..."
       />
       <StyledField
         type="text"
@@ -34,6 +40,9 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         <option value="IPA">IPA</option>
         <option value="DIPA">DIPA</option>
         <option value="TIPA">TIPA</option>
+        <option value="Hazy IPA">IPA</option>
+        <option value="Hazy DIPA">IPA</option>
+        <option value="Hazy TIPA">IPA</option>
         <option value="NE IPA">NE IPA</option>
         <option value="NE DIPA">NE DIPA</option>
         <option value="NE TIPA">NE TIPA</option>
@@ -42,6 +51,7 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         <option value="DDH TIPA">DDH TIPA</option>
         <option value="Milkshake IPA">Milkshake IPA</option>
         <option value="Porter">Porter</option>
+        <option value="Imperial porter">Imperial porter</option>
         <option value="Baltic porter">Baltic porter</option>
         <option value="English porter">English porter</option>
         <option value="American porter">American porter</option>
@@ -88,7 +98,7 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         <option value="Lager">Lager</option>
         <option value="American lager">American lager</option>
       </StyledSelect>
-      <button type="button" onClick={onRecet}>Recet filters</button>
+      <Button type="button" onClick={onRecet}>Recet filters</Button>
     </Container>
   );
 };
