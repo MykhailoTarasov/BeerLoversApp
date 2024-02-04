@@ -1,6 +1,6 @@
-import { Container, StyledField, StyledSelect } from './SearchBar.Styled';
+import { Button, Container, StyledField, StyledSelect } from './SearchBar.Styled';
 
-const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet }) => {
+const SearchBar = ({ filters: { place, brewery, style, date }, onChangeFilter, onRecet }) => {
   return (
     <Container>
       <StyledField
@@ -8,6 +8,12 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         value={place}
         onChange={evt => onChangeFilter('place', evt.target.value)}
         placeholder="Filter by place..."
+      />
+      <StyledField
+        type="text"
+        value={date}
+        onChange={evt => onChangeFilter('date', evt.target.value)}
+        placeholder="Filter by date..."
       />
       <StyledField
         type="text"
@@ -86,7 +92,7 @@ const SearchBar = ({ filters: { place, brewery, style }, onChangeFilter, onRecet
         <option value="Lager">Lager</option>
         <option value="American lager">American lager</option>
       </StyledSelect>
-      <button type="button" onClick={onRecet}>Recet filters</button>
+      <Button type="button" onClick={onRecet}>Recet filters</Button>
     </Container>
   );
 };
