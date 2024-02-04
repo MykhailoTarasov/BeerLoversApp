@@ -5,10 +5,10 @@ import { beerStyles } from '../../constants';
 
 import {
   Button,
+  StyledErrorMessage,
   StyledField,
   StyledForm,
   StyledLabel,
-  StyledMessage,
   StyledSelectField,
 } from './BeerForm.Styled';
 
@@ -57,22 +57,22 @@ const BeerForm = ({ onAdd }) => {
         <StyledForm>
           <StyledLabel>
             <StyledField id="beer" name="beer" placeholder="Beer" />
-            <StyledMessage name="beer" component="div" />
+            <StyledErrorMessage name="beer" component="div" />
           </StyledLabel>
 
           <StyledLabel>
             <StyledField id="place" name="place" placeholder="Place" />
-            <StyledMessage name="place" component="span" />
+            <StyledErrorMessage name="place" component="span" />
           </StyledLabel>
 
           <StyledLabel>
             <StyledField id="date" name="date" placeholder="Date" type="date" />
-            <StyledMessage name="date" component="span" />
+            <StyledErrorMessage name="date" component="span" />
           </StyledLabel>
 
           <StyledLabel>
             <StyledField id="brewery" name="brewery" placeholder="Brewery" />
-            <StyledMessage name="brewery" component="span" />
+            <StyledErrorMessage name="brewery" component="span" />
           </StyledLabel>
 
           <StyledLabel>
@@ -84,7 +84,7 @@ const BeerForm = ({ onAdd }) => {
              >
               {beerStyles.map((style) => <option key={style} value={style}>{style}</option>)}
             </StyledSelectField>
-            <StyledMessage name="style" component="span" />
+            <StyledErrorMessage name="style" component="span" />
           </StyledLabel>
 
           <Button type="submit">Add beer</Button>

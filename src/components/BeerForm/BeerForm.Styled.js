@@ -23,7 +23,7 @@ export const StyledLabel = styled.label`
   position: relative;
 `;
 
-export const StyledMessage = styled(ErrorMessage)`
+export const StyledErrorMessage = styled(ErrorMessage)`
   color: #cc0000;
   font-size: 20px;
   margin-top: 10px;
@@ -51,7 +51,7 @@ export const Button = styled.button`
   width: 120px;
   align-self: center;
   padding: 10px;
-  margin-top: 20px;
+ 
   color: white;
   background-color: #b4783a;
   border-radius: 5px;

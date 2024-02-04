@@ -63,6 +63,7 @@ const SearchBar = ({ filters: { place, brewery, style, date }, onChangeFilter, o
         <option value="Red ale">Red ale</option>
         <option value="Berliner weisse">Berliner weisse</option>
         <option value="Lambic">Lambic</option>
+        <option value="Sour">Sour</option>
         <option value="Witbier">Witbier</option>
         <option value="Weissbier">Weissbier</option>
         <option value="Blonde ale">Blonde ale</option>

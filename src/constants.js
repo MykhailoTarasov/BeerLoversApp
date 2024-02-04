@@ -29,6 +29,7 @@ export const beerStyles = [
   "Red ale",
   "Berliner weisse",
   "Lambic",
+  "Sour",
   "Witbier",
   "Weissbier",
   "Blonde ale",

@@ -69,6 +69,8 @@ const getBackgrounColor = props => {
       return '#b92525';
     case 'Lambic':
       return '#b92525';
+      case 'Sour':
+      return '#b92525';
     case 'Witbier':
       return '#f7e9c1';
     case 'Weissbier':
@@ -175,6 +177,8 @@ const getColor = props => {
     case 'Berliner weisse':
       return '#ffe189';
     case 'Lambic':
+      return '#ffe189';
+      case 'Sour':
       return '#ffe189';
     case 'Bock':
       return '#ffe189';
