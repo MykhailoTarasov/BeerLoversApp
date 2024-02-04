@@ -45,7 +45,6 @@ export const StyledField = styled(Field)`
 
 export const StyledSelectField = styled(StyledField)`
   padding: 8px;
-  ::placeholder
 `;
 
 export const Button = styled.button`
