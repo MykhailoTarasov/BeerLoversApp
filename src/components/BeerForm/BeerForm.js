@@ -1,7 +1,6 @@
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-
-import { beerStyles } from '../../constants';
+import formValidation from 'components/Helpers/formValidation';
+import { beerStyles } from 'constants';
 
 import {
   Button,
@@ -11,31 +10,6 @@ import {
   StyledLabel,
   StyledSelectField,
 } from './BeerForm.Styled';
-
-// It would be better to move this from component definition.
-const validation = Yup.object().shape({
-  beer: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('This is a required field!'),
-
-  place: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('This is a required field!'),
-
-  date: Yup.string()
-    .min(4, 'Too Short!')
-    .max(10, 'Too Long!')
-    .required('This is a required field!'),
-
-  brewery: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('This is a required field!'),
-
-  style: Yup.string().required('This is a required field!').notOneOf([beerStyles[0]], "Beer style should be specified!"),
-});
 
 const BeerForm = ({ onAdd }) => {
   return (
@@ -47,7 +21,7 @@ const BeerForm = ({ onAdd }) => {
         brewery: '',
         style: beerStyles[0],
       }}
-      validationSchema={validation}
+      validationSchema={formValidation}
       onSubmit={(values, actions) => {
         onAdd(values);
         actions.resetForm();
@@ -66,7 +40,7 @@ const BeerForm = ({ onAdd }) => {
           </StyledLabel>
 
           <StyledLabel>
-            <StyledField id="date" name="date" placeholder="Date" type="date" />
+            <StyledField id="date" name="date" placeholder="Date" />
             <StyledErrorMessage name="date" component="span" />
           </StyledLabel>
 
