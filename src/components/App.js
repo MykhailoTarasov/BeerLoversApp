@@ -10,9 +10,6 @@ import {
   SearchContainer,
 } from './Layout';
 
-// Lets use React lib in a modern way)) Functional components, hooks instead of class component.
-// It is important to understand how it is work but for now class components are no longer in use.
-// As a little challenge try to rewrite the app to get rid of class components.
 class App extends Component {
   state = {
     beerItems: [],
