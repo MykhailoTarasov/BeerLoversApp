@@ -5,7 +5,6 @@ const BeerCard = ({
   onDeleteBeerItem,
 }) => {
   return (
-    // This weird styling lib expects that all props have a prefix "$".
     <CardBox $beerstyle={style}>
       <CardTitle>{beer}</CardTitle>
       <DeleteButton onClick={() => onDeleteBeerItem(id)}><DeleteIcon/></DeleteButton>

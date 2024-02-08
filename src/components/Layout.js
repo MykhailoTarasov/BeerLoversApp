@@ -7,6 +7,8 @@ export const Container = styled.div`
   align-items: center;
   font-size: 20;
   color: #010101;
+  min-width: 320px;
+  background: linear-gradient(to right, #f7e97b, #b97b16);
 `;
 
 export const MainContainer = styled.div`
@@ -19,6 +21,7 @@ export const MainContainer = styled.div`
   
   width: 100%;
   margin-top: 20px;
+  min-width: 320px;
 `;
 
 export const SearchContainer = styled.div`
@@ -29,10 +32,12 @@ export const SearchContainer = styled.div`
     flex-basis: 250px;
     padding-left: 30px;
   }
+  min-width: 320px;
 `;
 
 export const ListContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 20px;
+  min-width: 320px;
 `;
