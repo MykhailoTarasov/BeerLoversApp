@@ -18,7 +18,6 @@ export const MainContainer = styled.div`
   }
   justify-content: center;
   
-  
   width: 100%;
   margin-top: 20px;
   min-width: 320px;

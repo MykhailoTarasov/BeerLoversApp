@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
+import { IoOpen } from "react-icons/io5";
 
 const getBackgrounColor = props => {
   switch (props.$beerstyle) {
@@ -214,8 +215,24 @@ export const CardBox = styled.div`
 
 export const DeleteButton = styled.button`
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 15px;
+  right: 15px;
+
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  padding: 10px;
+  color: white;
+  background-color: #b4783a;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+`;
+
+export const OpenModalButton = styled.button`
+  position: absolute;
+  bottom: 50px;
+  right: 15px;
 
   width: 30px;
   height: 30px;
@@ -229,6 +246,11 @@ export const DeleteButton = styled.button`
 `;
 
 export const DeleteIcon = styled(FaTrashCan)`
+  position: absolute;
+  transform: translate(-50%, -50%);
+`;
+
+export const OpenModalIcon = styled(IoOpen)`
   position: absolute;
   transform: translate(-50%, -50%);
 `;
