@@ -278,8 +278,7 @@ export const UpdateIcon = styled(GrDocumentUpdate)`
 `;
 
 export const CardTitle = styled.h3`
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 `;
 
 export const CardText = styled.p`

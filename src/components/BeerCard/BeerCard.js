@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import {
   ButtonBox,
   CardBox,
@@ -77,8 +77,14 @@ class BeerCard extends Component {
           style={customStyles}
           contentLabel="BeerCardModal"
         >
-          <p>I am a modal</p>
-          <button onClick={this.closeModal}>Close modal</button>
+          <div>
+            <CardTitle>{beer}</CardTitle>
+            <CardText>Place: {place}</CardText>
+            <CardText>Date: {date}</CardText>
+            <CardText>Brewery: {brewery}</CardText>
+            <CardText>Style: {style}</CardText>
+            <button onClick={this.closeModal}>Close</button>
+          </div>
         </Modal>
       </CardBox>
     );
