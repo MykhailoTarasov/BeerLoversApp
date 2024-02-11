@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
-import { IoOpen } from "react-icons/io5";
+import { IoOpen } from 'react-icons/io5';
+import { GrDocumentUpdate } from 'react-icons/gr';
 
 const getBackgrounColor = props => {
   switch (props.$beerstyle) {
@@ -46,7 +47,7 @@ const getBackgrounColor = props => {
       return '#f4f17f';
     case 'Porter':
       return '#29251e';
-      case 'Imperial porter':
+    case 'Imperial porter':
       return '#29251e';
     case 'Baltic porter':
       return '#29251e';
@@ -70,7 +71,7 @@ const getBackgrounColor = props => {
       return '#b92525';
     case 'Lambic':
       return '#b92525';
-      case 'Sour':
+    case 'Sour':
       return '#b92525';
     case 'Witbier':
       return '#f7e9c1';
@@ -157,7 +158,7 @@ const getColor = props => {
       return '#ffe189';
     case 'Porter':
       return '#ffe189';
-      case 'Imperial porter':
+    case 'Imperial porter':
       return '#ffe189';
     case 'Baltic porter':
       return '#ffe189';
@@ -179,7 +180,7 @@ const getColor = props => {
       return '#ffe189';
     case 'Lambic':
       return '#ffe189';
-      case 'Sour':
+    case 'Sour':
       return '#ffe189';
     case 'Bock':
       return '#ffe189';
@@ -213,11 +214,19 @@ export const CardBox = styled.div`
   background-color: ${getBackgrounColor};
 `;
 
-export const DeleteButton = styled.button`
+export const ButtonBox = styled.div`
   position: absolute;
-  bottom: 15px;
   right: 15px;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+`;
 
+export const DeleteButton = styled.button`
   width: 30px;
   height: 30px;
   align-self: center;
@@ -230,10 +239,18 @@ export const DeleteButton = styled.button`
 `;
 
 export const OpenModalButton = styled.button`
-  position: absolute;
-  bottom: 50px;
-  right: 15px;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  padding: 10px;
+  color: white;
+  background-color: #b4783a;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+`;
 
+export const UpdateButton = styled.button`
   width: 30px;
   height: 30px;
   align-self: center;
@@ -255,11 +272,16 @@ export const OpenModalIcon = styled(IoOpen)`
   transform: translate(-50%, -50%);
 `;
 
+export const UpdateIcon = styled(GrDocumentUpdate)`
+  position: absolute;
+  transform: translate(-50%, -50%);
+`;
+
 export const CardTitle = styled.h3`
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 
 export const CardText = styled.p`
-  margin: 0;
+  margin: 0 0 5px 0;
 `;

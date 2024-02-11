@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import {
+  ButtonBox,
   CardBox,
   CardText,
   CardTitle,
@@ -7,6 +8,8 @@ import {
   DeleteIcon,
   OpenModalButton,
   OpenModalIcon,
+  UpdateButton,
+  UpdateIcon,
 } from './BeerCard.Styled';
 import Modal from 'react-modal';
 
@@ -48,12 +51,18 @@ class BeerCard extends Component {
     return (
       <CardBox $beerstyle={style}>
         <CardTitle>{beer}</CardTitle>
-        <DeleteButton onClick={() => onDeleteBeerItem(id)}>
-          <DeleteIcon />
-        </DeleteButton>
-        <OpenModalButton onClick={this.openModal}>
-          <OpenModalIcon/>
-        </OpenModalButton>
+
+        <ButtonBox>
+          <UpdateButton>
+            <UpdateIcon />
+          </UpdateButton>
+          <OpenModalButton onClick={this.openModal}>
+            <OpenModalIcon />
+          </OpenModalButton>
+          <DeleteButton onClick={() => onDeleteBeerItem(id)}>
+            <DeleteIcon />
+          </DeleteButton>
+        </ButtonBox>
 
         <div>
           <CardText>Place: {place}</CardText>
