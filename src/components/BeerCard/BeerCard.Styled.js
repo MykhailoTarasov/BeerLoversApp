@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { FaTrashCan } from 'react-icons/fa6';
-import { IoOpen } from 'react-icons/io5';
 import { GrDocumentUpdate } from 'react-icons/gr';
 
 const getBackgrounColor = props => {
@@ -214,31 +213,22 @@ export const CardBox = styled.div`
   background-color: ${getBackgrounColor};
 `;
 
-export const ButtonBox = styled.div`
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translate(0, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-`;
+// export const ButtonBox = styled.div`
+//   position: absolute;
+//   right: 15px;
+//   top: 50%;
+//   transform: translate(0, -50%);
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 15px;
+// `;
 
 export const DeleteButton = styled.button`
-  width: 30px;
-  height: 30px;
-  align-self: center;
-  padding: 10px;
-  color: white;
-  background-color: #b4783a;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-`;
-
-export const OpenModalButton = styled.button`
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
   width: 30px;
   height: 30px;
   align-self: center;
@@ -251,6 +241,9 @@ export const OpenModalButton = styled.button`
 `;
 
 export const UpdateButton = styled.button`
+  position: absolute;
+  right: 15px;
+  bottom: 60px;
   width: 30px;
   height: 30px;
   align-self: center;
@@ -263,11 +256,6 @@ export const UpdateButton = styled.button`
 `;
 
 export const DeleteIcon = styled(FaTrashCan)`
-  position: absolute;
-  transform: translate(-50%, -50%);
-`;
-
-export const OpenModalIcon = styled(IoOpen)`
   position: absolute;
   transform: translate(-50%, -50%);
 `;

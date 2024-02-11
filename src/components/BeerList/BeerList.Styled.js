@@ -18,8 +18,7 @@ export const ListItem = styled.li`
   width: 100%;
 }
 width: 350px;
-
-// flex-basis: calc((100% - 2 * 24px) / 3);
+max-height: 180px;
 
 &:hover {
     transform: scale(1.03);
