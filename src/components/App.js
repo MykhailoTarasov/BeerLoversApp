@@ -9,6 +9,7 @@ import {
   MainContainer,
   SearchContainer,
 } from './Layout';
+import { fetchBeers } from 'api';
 
 class App extends Component {
   state = {
@@ -21,13 +22,20 @@ class App extends Component {
     },
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const savedBeer = localStorage.getItem('changed-beerItems');
     if (savedBeer !== null) {
       this.setState({
         beerItems: JSON.parse(savedBeer),
       });
     }
+
+    try {
+      const beers = await fetchBeers();
+      this.setState({
+        beerItems: beers,
+      });
+    } catch (error) {}
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -55,7 +63,7 @@ class App extends Component {
       const placeMatches =
         !filters.place ||
         beer.place.toLowerCase().includes(filters.place.toLowerCase());
-        const dateMatches =
+      const dateMatches =
         !filters.date ||
         beer.date.toLowerCase().includes(filters.date.toLowerCase());
       const breweryMatches =
@@ -104,6 +112,7 @@ class App extends Component {
 
   render() {
     const { filters } = this.state;
+    const visibleBeerItems = this.filterBeerItems();
 
     return (
       <Container>
@@ -121,10 +130,12 @@ class App extends Component {
           </SearchContainer>
 
           <ListContainer>
-            <BeerList
-              items={this.filterBeerItems()}
-              onDeleteBeerItem={this.deleteBeerItem}
-            />
+            {visibleBeerItems.length > 0 && (
+              <BeerList
+                items={visibleBeerItems}
+                onDeleteBeerItem={this.deleteBeerItem}
+              />
+            )}
           </ListContainer>
         </MainContainer>
       </Container>
