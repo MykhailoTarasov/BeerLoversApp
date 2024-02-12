@@ -14,6 +14,8 @@ import { fetchBeers } from 'api';
 class App extends Component {
   state = {
     beerItems: [],
+    loading: false,
+    error: false,
     filters: {
       place: '',
       brewery: '',
@@ -31,11 +33,17 @@ class App extends Component {
     }
 
     try {
+      this.setState({ loading: true, error: false });
       const beers = await fetchBeers();
       this.setState({
         beerItems: beers,
+        loading: false,
       });
-    } catch (error) {}
+    } catch (error) {
+      this.setState({ error: true });
+    } finally {
+      this.setState({ loading: false });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -111,13 +119,15 @@ class App extends Component {
   };
 
   render() {
-    const { filters } = this.state;
+    const { filters, loading, error } = this.state;
     const visibleBeerItems = this.filterBeerItems();
 
     return (
       <Container>
         <h1>BeerLoversApp</h1>
         <BeerForm onAdd={this.addBeer} />
+        {loading && <p>Loading...</p>}
+        {error && <p>Whoops... Error! Please, reload this page!</p>}
 
         <MainContainer>
           <SearchContainer>
