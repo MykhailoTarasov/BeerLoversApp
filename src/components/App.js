@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { nanoid } from 'nanoid';
 import BeerList from './BeerList/BeerList';
 import SearchBar from './SearchBar/SearchBar';
 import BeerForm from './BeerForm/BeerForm';
@@ -10,7 +9,7 @@ import {
   MainContainer,
   SearchContainer,
 } from './Layout';
-import { fetchBeers } from 'api';
+import { createBeer, fetchBeers } from 'api';
 
 class App extends Component {
   state = {
@@ -104,20 +103,29 @@ class App extends Component {
     }));
   };
 
-  addBeer = newBeer => {
-    const { beerItems } = this.state;
+  addBeer = async newBeer => {
+    try {
+      const { beerItems } = this.state;
 
-    const beerExists = beerItems.some(
-      item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
-    );
-
-    if (beerExists) {
-      alert(`${newBeer.beer} is already in the list.`);
-    } else {
-      this.setState(prevState => ({
-        beerItems: [...prevState.beerItems, { ...newBeer, id: nanoid() }],
-      }));
+      const beerExists = beerItems.some(
+        item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
+      );
+  
+      if (beerExists) {
+        alert(`${newBeer.beer} is already in the list.`);
+      } else {
+        this.setState({ loading: true, error: false });
+        const beer = await createBeer(newBeer)
+        this.setState(prevState => ({
+          beerItems: [...prevState.beerItems, beer],
+        }));
+      }
+    } catch (error) {
+      this.setState({ error: true });
+    } finally {
+      this.setState({ loading: false });
     }
+    
   };
 
   render() {
@@ -146,11 +154,11 @@ class App extends Component {
                 onDeleteBeerItem={this.deleteBeerItem}
               />
             )}
-            {loading && <p>Loading...</p>}
-            {error && <p>Whoops... Error! Please, reload this page!</p>}
-            <Toaster position="top-right"/>
+            <Toaster position="top-right" />
           </ListContainer>
         </MainContainer>
+        {loading && <p>Loading...</p>}
+        {error && <p>Whoops... Error! Please, reload this page!</p>}
       </Container>
     );
   }
