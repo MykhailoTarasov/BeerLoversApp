@@ -12,12 +12,13 @@ import {
 const BeerCard = ({
   beerItem: { id, beer, place, date, brewery, style },
   onDeleteBeerItem,
+  onUpdateBeerItem
 }) => {
   return (
     <CardBox $beerstyle={style}>
       <CardTitle>{beer}</CardTitle>
 
-        <UpdateButton>
+        <UpdateButton onClick={() => onUpdateBeerItem(id)}>
           <UpdateIcon />
         </UpdateButton>
         <DeleteButton onClick={() => onDeleteBeerItem(id)}>

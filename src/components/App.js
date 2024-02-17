@@ -10,6 +10,7 @@ import {
   SearchContainer,
 } from './Layout';
 import { createBeer, deleteBeerById, fetchBeers } from 'api';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -141,6 +142,27 @@ class App extends Component {
     
   };
 
+  updateBeerItem = async updatedBeer => {
+    try {
+      this.setState({ loading: true, error: false });
+      const response = await axios.put(`/Beers/${updatedBeer.id}`, updatedBeer);
+      const updatedBeerItem = response.data;
+
+      // Update the state with the updated beer item
+      this.setState(prevState => ({
+        beerItems: prevState.beerItems.map(beer => 
+          beer.id === updatedBeerItem.id ? updatedBeerItem : beer
+        )
+      }));
+      
+      toast.success('Beer updated!');
+    } catch (error) {
+      this.setState({ error: true });
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
+
   render() {
     const { filters, loading, error } = this.state;
     const visibleBeerItems = this.filterBeerItems();
@@ -165,6 +187,7 @@ class App extends Component {
               <BeerList
                 items={visibleBeerItems}
                 onDeleteBeerItem={this.deleteBeerItem}
+                onUpdateBeerItem={this.updateBeerItem}
               />
             )}
             <Toaster position="top-right" />

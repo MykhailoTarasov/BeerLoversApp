@@ -1,12 +1,16 @@
-import BeerCard from "components/BeerCard/BeerCard";
-import { List, ListItem } from "./BeerList.Styled";
+import BeerCard from 'components/BeerCard/BeerCard';
+import { List, ListItem } from './BeerList.Styled';
 
-const BeerList = ({ items, onDeleteBeerItem }) => {
+const BeerList = ({ items, onDeleteBeerItem, onUpdateBeerItem }) => {
   return (
     <List>
       {items.map(item => (
         <ListItem key={item.id}>
-            <BeerCard beerItem={item} onDeleteBeerItem={onDeleteBeerItem}/>
+          <BeerCard
+            beerItem={item}
+            onDeleteBeerItem={onDeleteBeerItem}
+            onUpdateBeerItem={onUpdateBeerItem}
+          />
         </ListItem>
       ))}
     </List>
