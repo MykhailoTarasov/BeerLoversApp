@@ -9,7 +9,7 @@ import {
   MainContainer,
   SearchContainer,
 } from './Layout';
-import { createBeer, fetchBeers } from 'api';
+import { createBeer, deleteBeerById, fetchBeers } from 'api';
 
 class App extends Component {
   state = {
@@ -97,11 +97,23 @@ class App extends Component {
     });
   };
 
-  deleteBeerItem = beerId => {
-    this.setState(prevState => ({
-      beerItems: prevState.beerItems.filter(beer => beer.id !== beerId),
-    }));
+  deleteBeerItem = async beerId => {
+    try {
+      this.setState({ loading: true, error: false });
+      const deletedBeer = await deleteBeerById(beerId);
+      this.setState(prevState => ({
+        beerItems: prevState.beerItems.filter(
+          beer => beer.id !== deletedBeer.id
+        ),
+      }));
+      toast.success('Beer deleted!');
+    } catch (error) {
+      this.setState({ error: true });
+    } finally {
+      this.setState({ loading: false });
+    }
   };
+
 
   addBeer = async newBeer => {
     try {
