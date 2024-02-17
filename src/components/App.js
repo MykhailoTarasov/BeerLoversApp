@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { nanoid } from 'nanoid';
 import BeerList from './BeerList/BeerList';
 import SearchBar from './SearchBar/SearchBar';
@@ -35,6 +36,7 @@ class App extends Component {
     try {
       this.setState({ loading: true, error: false });
       const beers = await fetchBeers();
+      toast.success('You have some beer!');
       this.setState({
         beerItems: beers,
         loading: false,
@@ -126,8 +128,6 @@ class App extends Component {
       <Container>
         <h1>BeerLoversApp</h1>
         <BeerForm onAdd={this.addBeer} />
-        {loading && <p>Loading...</p>}
-        {error && <p>Whoops... Error! Please, reload this page!</p>}
 
         <MainContainer>
           <SearchContainer>
@@ -146,6 +146,9 @@ class App extends Component {
                 onDeleteBeerItem={this.deleteBeerItem}
               />
             )}
+            {loading && <p>Loading...</p>}
+            {error && <p>Whoops... Error! Please, reload this page!</p>}
+            <Toaster position="top-right"/>
           </ListContainer>
         </MainContainer>
       </Container>
