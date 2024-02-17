@@ -131,6 +131,7 @@ class App extends Component {
         this.setState(prevState => ({
           beerItems: [...prevState.beerItems, beer],
         }));
+        toast.success('Beer added!');
       }
     } catch (error) {
       this.setState({ error: true });

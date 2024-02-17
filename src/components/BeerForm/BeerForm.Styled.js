@@ -52,11 +52,11 @@ export const Button = styled.button`
   align-self: center;
   padding: 10px;
  
-  color: white;
-  background-color: #b4783a;
+  color: #f7e97b;
+  background-color: transparent;
   border-radius: 5px;
   cursor: pointer;
-  border: none;
+  border: 1px solid #f7e97b;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 `;
