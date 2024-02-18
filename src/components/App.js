@@ -11,18 +11,27 @@ import {
 } from './Layout';
 import { createBeer, deleteBeerById, fetchBeers } from 'api';
 import axios from 'axios';
+import Loader from './Loader';
+import LoadMoreButton from './LoadMoreButton/LoadMoreButton';
 
 class App extends Component {
   state = {
     beerItems: [],
     loading: false,
     error: false,
+    loadMore: false,
+    page: 1,
+    
     filters: {
       place: '',
       brewery: '',
       style: '',
       date: '',
     },
+  };
+
+  handleButton = () => {
+    this.setState(prevState => ({ page: prevState.page + 1 }));
   };
 
   async componentDidMount() {
@@ -148,7 +157,6 @@ class App extends Component {
       const response = await axios.put(`/Beers/${updatedBeer.id}`, updatedBeer);
       const updatedBeerItem = response.data;
 
-      // Update the state with the updated beer item
       this.setState(prevState => ({
         beerItems: prevState.beerItems.map(beer => 
           beer.id === updatedBeerItem.id ? updatedBeerItem : beer
@@ -170,6 +178,7 @@ class App extends Component {
     return (
       <Container>
         <h1>BeerLoversApp</h1>
+        {error && <p>Whoops... Error! Please, reload this page!</p>}
         <BeerForm onAdd={this.addBeer} />
 
         <MainContainer>
@@ -190,11 +199,12 @@ class App extends Component {
                 onUpdateBeerItem={this.updateBeerItem}
               />
             )}
+            <LoadMoreButton onButtonClick={this.handleButton} />
             <Toaster position="top-right" />
           </ListContainer>
         </MainContainer>
-        {loading && <p>Loading...</p>}
-        {error && <p>Whoops... Error! Please, reload this page!</p>}
+        {loading && <Loader/>}
+        
       </Container>
     );
   }
