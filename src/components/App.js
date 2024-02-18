@@ -11,7 +11,7 @@ import {
 } from './Layout';
 import { createBeer, deleteBeerById, fetchBeers } from 'api';
 import axios from 'axios';
-import Loader from './Loader';
+import Loader from './Loader/Loader';
 import LoadMoreButton from './LoadMoreButton/LoadMoreButton';
 
 class App extends Component {
@@ -19,9 +19,6 @@ class App extends Component {
     beerItems: [],
     loading: false,
     error: false,
-    loadMore: false,
-    page: 1,
-    
     filters: {
       place: '',
       brewery: '',
@@ -30,17 +27,13 @@ class App extends Component {
     },
   };
 
-  handleButton = () => {
-    this.setState(prevState => ({ page: prevState.page + 1 }));
-  };
-
   async componentDidMount() {
-    const savedBeer = localStorage.getItem('changed-beerItems');
-    if (savedBeer !== null) {
-      this.setState({
-        beerItems: JSON.parse(savedBeer),
-      });
-    }
+    // const savedBeer = localStorage.getItem('changed-beerItems');
+    // if (savedBeer !== null) {
+    //   this.setState({
+    //     beerItems: JSON.parse(savedBeer),
+    //   });
+    // }
 
     try {
       this.setState({ loading: true, error: false });
@@ -189,6 +182,7 @@ class App extends Component {
               onChangeFilter={this.changeFilter}
               onRecet={this.recetFilters}
             />
+            {loading && <Loader/>}
           </SearchContainer>
 
           <ListContainer>
@@ -199,11 +193,11 @@ class App extends Component {
                 onUpdateBeerItem={this.updateBeerItem}
               />
             )}
-            <LoadMoreButton onButtonClick={this.handleButton} />
+            <LoadMoreButton />
             <Toaster position="top-right" />
           </ListContainer>
         </MainContainer>
-        {loading && <Loader/>}
+        
         
       </Container>
     );

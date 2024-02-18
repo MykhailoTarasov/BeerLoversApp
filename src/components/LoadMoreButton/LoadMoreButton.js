@@ -1,8 +1,8 @@
 import { StyledButton } from "./LoadMoreButton.Styled";
 
-const LoadMoreButton = ({ onButtonClick }) => {
+const LoadMoreButton = () => {
     return (
-      <StyledButton type="button" onClick={onButtonClick}>
+      <StyledButton type="button">
         Load more
       </StyledButton>
     );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://65c9e9353b05d29307df3e1d.mockapi.io/api/';
+axios.defaults.baseURL = 'https://65d1e18a987977636bfb9c1f.mockapi.io/';
 
 export const fetchBeers = async () => {
     const response = await axios.get('/Beers');

@@ -1,8 +1,9 @@
 import { Hourglass } from 'react-loader-spinner';
+import { LoaderContainer } from './Loader.Styled';
 
 const Loader = () => {
     return (
-        <div>
+        <LoaderContainer>
             <Hourglass
             visible={true}
             height="80"
@@ -10,9 +11,9 @@ const Loader = () => {
             ariaLabel="hourglass-loading"
             wrapperStyle={{}}
             wrapperClass=""
-            colors={['#b6ddd8', '#b6ddd8']}
+            colors={['#b97b16', '#b97b16']}
           />
-        </div>
+        </LoaderContainer>
     )
 }
 
