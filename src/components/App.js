@@ -28,13 +28,6 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    // const savedBeer = localStorage.getItem('changed-beerItems');
-    // if (savedBeer !== null) {
-    //   this.setState({
-    //     beerItems: JSON.parse(savedBeer),
-    //   });
-    // }
-
     try {
       this.setState({ loading: true, error: false });
       const beers = await fetchBeers();
