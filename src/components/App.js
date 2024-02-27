@@ -23,14 +23,11 @@ const App = () => {
     brewery: '',
     style: '',
     date: '',
-  },);
+  });
 
   useEffect(() => {
-    localStorage.setItem(
-      'changed-beerItems',
-      JSON.stringify(beerItems)
-    );
-  }, [beerItems])
+    localStorage.setItem('changed-beerItems', JSON.stringify(beerItems));
+  }, [beerItems]);
 
   useEffect(() => {
     async function getBeers() {
@@ -55,14 +52,14 @@ const App = () => {
       const beerExists = beerItems.some(
         item => item.beer.toLowerCase() === newBeer.beer.toLowerCase()
       );
-  
+
       if (beerExists) {
         alert(`${newBeer.beer} is already in the list.`);
       } else {
         setLoading(true);
         setError(false);
-        const beer = await createBeer(newBeer)
-        setBeerItems(prevState => [...prevState, beer])
+        const beer = await createBeer(newBeer);
+        setBeerItems(prevState => [...prevState, beer]);
         toast.success('Beer added!');
       }
     } catch (error) {
@@ -70,7 +67,6 @@ const App = () => {
     } finally {
       setLoading(false);
     }
-    
   };
 
   const deleteBeerItem = async beerId => {
@@ -78,9 +74,9 @@ const App = () => {
       setLoading(true);
       setError(false);
       const deletedBeer = await deleteBeerById(beerId);
-      setBeerItems(prevState => prevState.filter(
-        beer => beer.id !== deletedBeer.id
-      ))
+      setBeerItems(prevState =>
+        prevState.filter(beer => beer.id !== deletedBeer.id)
+      );
       toast.success('Beer deleted!');
     } catch (error) {
       setError(true);
@@ -102,7 +98,7 @@ const App = () => {
       brewery: '',
       style: '',
       date: '',
-    },);
+    });
   };
 
   const updateBeerItem = async updatedBeer => {
@@ -112,10 +108,12 @@ const App = () => {
       const response = await axios.put(`/Beers/${updatedBeer.id}`, updatedBeer);
       const updatedBeerItem = response.data;
 
-      setBeerItems(prevState => prevState.map(beer => 
-        beer.id === updatedBeerItem.id ? updatedBeerItem : beer
-      ))
-      
+      setBeerItems(prevState =>
+        prevState.map(beer =>
+          beer.id === updatedBeerItem.id ? updatedBeerItem : beer
+        )
+      );
+
       toast.success('Beer updated!');
     } catch (error) {
       setError(true);
@@ -125,7 +123,6 @@ const App = () => {
   };
 
   const visibleBeerItems = beerItems.filter(beer => {
-
     const placeMatches =
       !filters.place ||
       beer.place.toLowerCase().includes(filters.place.toLowerCase());
@@ -156,7 +153,7 @@ const App = () => {
             onChangeFilter={changeFilter}
             onRecet={recetFilters}
           />
-          {loading && <Loader/>}
+          {loading && <Loader />}
         </SearchContainer>
 
         <ListContainer>
@@ -171,11 +168,8 @@ const App = () => {
           <Toaster position="top-right" />
         </ListContainer>
       </MainContainer>
-      
-      
     </Container>
   );
-}
-
+};
 
 export default App;

@@ -38,6 +38,6 @@ export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px;
+  padding: 20px 0;
   min-width: 320px;
 `;
