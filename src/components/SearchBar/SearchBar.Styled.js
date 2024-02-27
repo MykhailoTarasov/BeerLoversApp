@@ -51,4 +51,12 @@ export const Button = styled.button`
   border: 1px solid #b97b16;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    @media (min-width: 768px) {
+      border: 1px solid #f7e97b;
+      color: #f7e97b;
+    }
+    @media (min-width: 1440px) {
+      border: 1px solid #b97b16;
+      color: #b97b16;
+    }
 `;
