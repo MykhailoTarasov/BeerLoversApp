@@ -31,13 +31,13 @@ export const SearchContainer = styled.div`
     flex-basis: 250px;
     padding-left: 30px;
   }
-  min-width: 320px;
+  min-width: 280px;
 `;
 
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   min-width: 320px;
 `;

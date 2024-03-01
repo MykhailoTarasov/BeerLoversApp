@@ -73,13 +73,13 @@ const getBackgrounColor = props => {
     case 'Sour':
       return '#b92525';
     case 'Witbier':
-      return '#f7e9c1';
+      return '#fde6a2';
     case 'Weissbier':
-      return '#f7e9c1';
+      return '#fde6a2';
     case 'Blonde ale':
-      return '#f7e9c1';
+      return '#fde6a2';
     case 'Hefeweizen':
-      return '#f7e9c1';
+      return '#fde6a2';
     case 'Bock':
       return '#7e5c3a';
     case 'Brown ale':
@@ -212,18 +212,6 @@ export const CardBox = styled.div`
   color: ${getColor};
   background-color: ${getBackgrounColor};
 `;
-
-// export const ButtonBox = styled.div`
-//   position: absolute;
-//   right: 15px;
-//   top: 50%;
-//   transform: translate(0, -50%);
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 15px;
-// `;
 
 export const DeleteButton = styled.button`
   position: absolute;
