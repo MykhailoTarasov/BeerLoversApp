@@ -44,6 +44,8 @@ const getBackgrounColor = props => {
       return '#f4f17f';
     case 'Milkshake IPA':
       return '#f4f17f';
+    case 'Kveik IPA':
+      return '#f4f17f';
     case 'Porter':
       return '#29251e';
     case 'Imperial porter':

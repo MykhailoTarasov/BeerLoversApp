@@ -17,6 +17,7 @@ export const beerStyles = [
   "DDH DIPA",
   "DDH TIPA",
   "Milkshake IPA",
+  "Kveik IPA",
   "Porter",
   "Baltic porter",
   "English porter",
